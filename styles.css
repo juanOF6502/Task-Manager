@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+body{
+    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: whitesmoke;
+} 
+
+h2 {
+    font-weight: 200;
+}
+
+.mainCard{
+    background-color: rgb(236, 232, 225);
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+form{
+    display: flex;
+}
+
+.inputForm{
+    padding: 8px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-right: none;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.inputForm:focus {
+    outline: none;
+}
+
+.btnCreate{
+    padding: 8px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    font-family: 'Outfit', sans-serif;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: all 0.5s ease-in-out;
+}
+
+.btnCreate:hover{
+    background-color: rgb(93, 201, 79);
+}
+
+.btnDelete{
+    padding: 8px;
+    border-radius: 12px;
+    margin-left: 5px;
+    font-family: 'Outfit', sans-serif;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: all 0.5s ease-in-out;
+}
+
+.btnDelete:hover{
+    background-color: rgb(201, 79, 79);
+}
+
+.btnComplete{
+    padding: 8px;
+    border-radius: 12px;
+    margin-left: 5px;
+    font-family: 'Outfit', sans-serif;
+    border: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: all 0.5s ease-in-out;
+}
+
+.btnComplete:hover{
+    transform: scale(1.1);
+}
+
+.complete{
+    background-color: rgb(102, 226, 185);
+}
+
+.cardList{
+    list-style: none;
+    margin: 8px 0 0 0;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-radius: 12px;
+    margin-bottom: 9px;
+    font-family: 'Outfit', sans-serif;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+  *::-webkit-scrollbar {
+    width: 3px;
+}
+
+  *::-webkit-scrollbar-track {
+    background: none;
+}
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #7e7a7f;
+    border-radius: 10px;
+    border: none;
+}
