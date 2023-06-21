@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+
+    <button class="btnComplete"><a href="./login.html">LOGIN</a></button>
     <main>
         <h1 class="class">Task Manager</h1>
         <div class="mainCard">
             <h2 class="subtitle"></h2>
-            <form>
+            <form class="task-form">
                 <input type="text" class="inputForm">
                 <button type="submit" class="btnCreate">AGREGAR</button>
                 <div>
                     <button class="btnDelete">BORRAR</button>
                 </div>
             </form>
+            <label><input type="checkbox" id="important" value="important">Important Task</label>
             <ul class="cardList"></ul>
         </div>
     </main>
 </body>
-<script src="./main.js"></script>
+<script src="./scripts/main.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();

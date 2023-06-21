@@ -4,6 +4,7 @@ const btnCreate = document.querySelector('.btnCreate')
 const textArea = document.querySelector('.inputForm')
 const list = document.querySelector('.cardList')
 const subtitle = document.querySelector('.subtitle')
+const checkbox = document.querySelector('#important')
 let tasks = []
 
 //EVENTOS
@@ -21,7 +22,20 @@ function deleteText(e){
 function createTask(e){
     e.preventDefault()
     const task = textArea.value
-    const card = `<li 
+    let card
+    if(checkbox.checked){
+        card = `<li 
+        class='card important' 
+        data-aos="fade-right" 
+        data-aos-duration="1000"">
+            ${task}
+            <div>
+            <button class="btnComplete">✅</button>
+            <button class="btnDelete">🗑️</button>
+            </div>
+        </li>`
+    }else{
+        card = `<li 
         class='card' 
         data-aos="fade-right" 
         data-aos-duration="1000"">
@@ -31,9 +45,11 @@ function createTask(e){
             <button class="btnDelete">🗑️</button>
             </div>
         </li>`
+    }
     if(!task){
         return
     } else{
+        checkbox.checked = false
         textArea.value = ''
         list.innerHTML += card
         tasks.push(task)
@@ -101,5 +117,5 @@ function renderTasks() {
 loadData();
 writeSubtitle()
 
-
+console.log(checkbox)
 
