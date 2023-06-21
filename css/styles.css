@@ -126,6 +126,10 @@ h2 {
     color: red;
 }
 
+.config-task{
+    margin-top: 5px;
+}
+
   *::-webkit-scrollbar {
     width: 3px;
 }
@@ -140,3 +144,8 @@ h2 {
     border: none;
 }
 
+@media screen and (max-width:768px) {
+    .cardList{
+        max-height: 250px;
+    }
+}

@@ -6,7 +6,6 @@
     <title>Task Manager</title>
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/styles.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
@@ -22,14 +21,14 @@
                     <button class="btnDelete">BORRAR</button>
                 </div>
             </form>
-            <label><input type="checkbox" id="important" value="important">Important Task</label>
+            <div class="config-task">
+                <label><input type="checkbox" id="important" value="important">Important Task</label>
+                <button class="btnDelete" id="btnClear">Borrar lista</button>
+            </div>
+            
             <ul class="cardList"></ul>
         </div>
     </main>
 </body>
 <script src="./scripts/main.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
 </html>
