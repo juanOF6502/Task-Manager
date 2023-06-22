@@ -1,22 +1,21 @@
-//VARIABLES
+// VARIABLES
 const btnDelete = document.querySelector('.btnDelete')
 const btnCreate = document.querySelector('.btnCreate')
 const textArea = document.querySelector('.inputForm')
 const list = document.querySelector('.cardList')
 const subtitle = document.querySelector('.subtitle')
-const checkbox = document.querySelector('#important')
 const btnClear = document.querySelector('#btnClear')
+const checkbox = document.querySelector('#important')
 let tasks = []
 
-//EVENTOS
+// EVENTOS
 btnDelete.addEventListener('click', deleteText) 
 btnCreate.addEventListener('click', createTask)
 btnClear.addEventListener('click', deleteList)
 list.addEventListener('click', deleteTask)
 list.addEventListener('click', completeTask)
 
-
-//FUNCIONES
+// FUNCIONES
 function deleteText(e){
     e.preventDefault()
     textArea.value = ''
@@ -33,42 +32,48 @@ function createTask(e){
     e.preventDefault()
     const task = textArea.value
     let card
-    if(checkbox.checked){
-        card = `<li 
-        class='card important'>
-            ${task}
-            <div>
-            <button class="btnComplete">✅</button>
-            <button class="btnDelete">🗑️</button>
-            </div>
-        </li>`
+    const isChecked = checkbox.checked
+    if(isChecked){
+        card = createCardElement(task, true)
     }else{
-        card = `<li 
-        class='card'>
-            ${task}
-            <div>
-            <button class="btnComplete">✅</button>
-            <button class="btnDelete">🗑️</button>
-            </div>
-        </li>`
+        card = createCardElement(task, false)
     }
     if(!task){
         return
     } else{
-        checkbox.checked = false
         textArea.value = ''
-        list.innerHTML += card
-        tasks.push(task)
+        list.appendChild(card)
+        tasks.push({
+            task: task,
+            important: isChecked
+        })
         saveData()
         writeSubtitle()
     }
+}
+
+function createCardElement(task, isImportant) {
+    const li = document.createElement('li')
+    li.classList.add('card')
+    if(isImportant){
+        li.classList.add('important')
+    }
+    li.innerHTML = `
+        ${task}
+        <div>
+            <button class="btnComplete">✅</button>
+            <button class="btnDelete">🗑️</button>
+        </div>
+    `
+    return li
 }
 
 function deleteTask(e) {
     if (e.target.classList.contains('btnDelete')) {
         const card = e.target.closest('.card');
         card.remove();
-        tasks.splice(card, 1)
+        const index = Array.from(list.children).indexOf(card)
+        tasks.splice(index, 1)
         saveData()
         writeSubtitle()
     }
@@ -78,9 +83,9 @@ function completeTask(e) {
     if (e.target.classList.contains('btnComplete')) {
         const btnComplete = e.target;
         if (btnComplete.classList.contains('complete')) {
-        btnComplete.classList.remove('complete');
+            btnComplete.classList.remove('complete');
         } else {
-        btnComplete.classList.add('complete');
+            btnComplete.classList.add('complete');
         }
     }
 }
@@ -91,45 +96,32 @@ function writeSubtitle(){
     : subtitle.innerHTML = 'Tus tareas'
 }
 
-function saveData(){
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+function saveData() {
+    const data = {
+        tasks: tasks
+    };
+    localStorage.setItem('data', JSON.stringify(data));
 }
 
 function loadData() {
-    const savedTasks = localStorage.getItem('tasks');
-    if (savedTasks) {
-        tasks = JSON.parse(savedTasks);
+    const savedData = localStorage.getItem('data');
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        tasks = data.tasks;
         renderTasks();
     }
 }
 
 function renderTasks() {
     list.innerHTML = '';
-    for (const task of tasks) {
-        let card;
-        if (checkbox.checked) {
-        card = `<li class='card important'>
-                    ${task}
-                    <div>
-                        <button class="btnComplete">✅</button>
-                        <button class="btnDelete">🗑️</button>
-                    </div>
-                </li>`;
-        } else {
-        card = `<li class='card'>
-                    ${task}
-                    <div>
-                        <button class="btnComplete">✅</button>
-                        <button class="btnDelete">🗑️</button>
-                    </div>
-                </li>`;
-        }
-        list.innerHTML += card;
+    for (const taskObj of tasks) {
+        const card = createCardElement(taskObj.task, taskObj.important)
+        list.appendChild(card);
     }
 }
 
 loadData();
-writeSubtitle()
+writeSubtitle();
 
 
 
