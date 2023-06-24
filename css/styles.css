@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
-body{
-    background-image: linear-gradient(to right, #DECBA4, #3E5151);
+html {
+	color-scheme: dark;
 }
+
+body{
+    background: linear-gradient(to bottom, #292E49 0%, #536976 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow-y: hidden;
+}
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Outfit', sans-serif;
+}
+
+img {
+    width: 10%;
+    margin-bottom: 5px;
 }
 
 a {
@@ -23,6 +36,7 @@ h1 {
 
 h2 {
     font-weight: 200;
+    color: black;
 }
 
 .mainCard{
@@ -61,7 +75,7 @@ h2 {
 }
 
 .btnCreate:hover{
-    background-color: rgb(93, 201, 79);
+    background-color: rgb(64, 156, 52);
 }
 
 .btnDelete{
@@ -75,7 +89,7 @@ h2 {
 }
 
 .btnDelete:hover{
-    background-color: rgb(201, 79, 79);
+    background-color: rgb(175, 50, 50);
 }
 
 .btnComplete{
@@ -99,7 +113,7 @@ h2 {
 }
 
 .complete{
-    background-color: rgb(102, 226, 185);
+    background-color: rgb(76, 223, 174);
 }
 
 .cardList{
@@ -120,6 +134,11 @@ h2 {
     font-family: 'Outfit', sans-serif;
     border: none;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: black;
+}
+
+.checkbox {
+    color: black;
 }
 
 .important{
@@ -146,6 +165,6 @@ h2 {
 
 @media screen and (max-width:768px) {
     .cardList{
-        max-height: 250px;
+        max-height: 270px;
     }
 }

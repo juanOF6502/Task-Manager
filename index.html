@@ -11,23 +11,22 @@
 
     <button class="btnComplete"><a href="./login.html">LOGIN</a></button>
     <main>
-        <h1 class="class">Task Manager</h1>
-        <div class="mainCard">
+        <h1>Task Manager</h1>
+        <section class="mainCard">
             <h2 class="subtitle"></h2>
             <form class="task-form">
-                <input type="text" class="inputForm">
+                <input type="text" class="inputForm" maxlength="25">
                 <button type="submit" class="btnCreate">AGREGAR</button>
                 <div>
                     <button class="btnDelete">BORRAR</button>
                 </div>
             </form>
             <div class="config-task">
-                <label><input type="checkbox" id="important" value="important">Important Task</label>
+                <label class="checkbox"><input type="checkbox" id="important" value="important">Important Task</label>
                 <button class="btnDelete" id="btnClear">Borrar lista</button>
             </div>
-            
             <ul class="cardList"></ul>
-        </div>
+        </section>
     </main>
 </body>
 <script src="./scripts/main.js"></script>
