@@ -2,10 +2,7 @@
 
 
 body{
-    background: linear-gradient(to bottom, #292E49 0%, #536976 100%);
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    overflow-y: hidden;
+    background: linear-gradient(to right, #292E49 0%, #536976 100%);
 }
 
 main {
