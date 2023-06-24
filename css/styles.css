@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 
-html {
-	color-scheme: dark;
-}
 
 body{
     background: linear-gradient(to bottom, #292E49 0%, #536976 100%);
@@ -19,9 +16,8 @@ main {
     font-family: 'Outfit', sans-serif;
 }
 
-img {
-    width: 10%;
-    margin-bottom: 5px;
+button {
+    color: whitesmoke;
 }
 
 a {
@@ -58,6 +54,7 @@ h2 {
     border: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     font-size: 17px !important; 
+    background-color: #454446;
 }
 
 .inputForm:focus {
@@ -72,6 +69,7 @@ h2 {
     border: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: all 0.5s ease-in-out;
+    background-color: #626063;
 }
 
 .btnCreate:hover{
@@ -86,6 +84,7 @@ h2 {
     border: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: all 0.5s ease-in-out;
+    background-color: #626063;
 }
 
 .btnDelete:hover{
@@ -100,6 +99,7 @@ h2 {
     border: none;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     transition: all 0.5s ease-in-out;
+    background-color: #626063;
 }
 
 .btnComplete a {
@@ -164,10 +164,10 @@ h2 {
 }
 
 @media screen and (max-width:768px) {
+    .mainCard{
+        padding-inline: 20px;
+    }
     .cardList{
         max-height: 250px;
-    }
-    button{
-        color: whitesmoke;
     }
 }

@@ -49,6 +49,7 @@ function createTask(e){
         })
         saveData()
         writeSubtitle()
+        checkbox.checked = false
     }
 }
 
