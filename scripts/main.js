@@ -34,9 +34,9 @@ function createTask(e){
     let card
     const isChecked = checkbox.checked
     if(isChecked){
-        card = createCardElement(task, true)
+        card = createCardElement(task.charAt(0).toUpperCase() + task.slice(1), true)
     }else{
-        card = createCardElement(task, false)
+        card = createCardElement(task.charAt(0).toUpperCase() + task.slice(1), false)
     }
     if(!task){
         return
@@ -116,7 +116,7 @@ function loadData() {
 function renderTasks() {
     list.innerHTML = '';
     for (const taskObj of tasks) {
-        const card = createCardElement(taskObj.task, taskObj.important)
+        const card = createCardElement(taskObj.task.charAt(0).toUpperCase() + taskObj.task.slice(1), taskObj.important)
         list.appendChild(card);
     }
 }
